@@ -8,7 +8,7 @@ My repository for my web development POE
 ## Student Information
 - **Name:** Siphesihle Dlamini
 - **Module:** Web Development (Introduction) – WEDE5020
-- **Live Website Link:**https://bakedbysihle.netlify.app]
+- **Live Website Link:**https://bakedbysihle.netlify.app
 
 ---
 
