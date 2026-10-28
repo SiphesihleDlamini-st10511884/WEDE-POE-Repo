@@ -3,78 +3,100 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Contact Baked By Sihle. Visit our bakeries in Johannesburg and Polokwane, or send us a message directly.">
+    <meta name="keywords" content="bakery contact, Johannesburg bakery, Polokwane bakery, find us">
     <title>Baked By Sihle | Contact</title>
+    
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- NAVIGATION -->
     <header>
         <h1>Baked By Sihle</h1>
         <nav>
-            <a href="index.html" target="_blank">Home</a> &nbsp;|&nbsp;
-            <a href="about.html" target="_blank">About</a> &nbsp;|&nbsp;
-            <a href="products.html" target="_blank">Products</a> &nbsp;|&nbsp;
-            <a href="enquiry.html" target="_blank">Enquiry</a> &nbsp;|&nbsp;
-            <a href="contact.html" target="_blank">Contact</a>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a> |
+            <a href="products.html">Products</a> |
+            <a href="enquiry.html">Enquiry</a> |
+            <a href="contact.html">Contact</a>
         </nav>
         <hr />
-        <hr />
     </header>
+
     <main>
         <section>
             <h2>Get in touch</h2>
             <p>We'd love to hear from you - stop by, call, or send a message.</p>
             <hr />
 
-            <form>
-                <p>
-                    <label for="fullname">Full name *</label><br />
-                    <input type="text" id="fullname" required />
-                </p>
-                <p>
-                    <label for="email2">Email *</label><br />
-                    <input type="email" id="email2" required />
-                </p>
-                <p>
-                    <label for="subject">Subject</label><br />
-                    <input type="text" id="subject" />
-                </p>
-                <p>
-                    <label for="message">Message *</label><br />
-                    <textarea id="message" rows="5" cols="40" required></textarea>
-                </p>
-                <p>
-                    <button type="submit">Send message</button>
-                </p>
-            </form>
+            <!-- Fixed Layout: Grid container for form and info -->
+            <div class="contact-grid">
+                
+                <!-- Left Column: Form -->
+                <div class="contact-form-area">
+                    <form id="contactForm">
+                        <p>
+                            <label for="fullname">Full name *</label><br />
+                            <input type="text" id="fullname" />
+                        </p>
+                        <p>
+                            <label for="email2">Email *</label><br />
+                            <input type="email" id="email2" />
+                        </p>
+                        <p>
+                            <label for="phone2">Phone *</label><br />
+                            <input type="tel" id="phone2" />
+                        </p>
+                        <p>
+                            <label for="subject">Subject</label><br />
+                            <input type="text" id="subject" />
+                        </p>
+                        <p>
+                            <label for="message">Message *</label><br />
+                            <textarea id="message" rows="5"></textarea>
+                        </p>
+                        <p>
+                            <button type="submit" class="btn">Send message</button>
+                        </p>
+                    </form>
+                    <div id="contact-response" class="success-msg" style="display:none;"></div>
+                </div>
 
-            <h3>Visit us</h3>
-            <address>
-                <p>17 Wolmarans Street, Braamfontein, Johannesburg(In construction)</p>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.037988690311!2d28.035275275303885!3d-26.19544247708196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c1ec722be17%3A0xcc4d0b4804b7644b!2s17%20Wolmarans%20St%2C%20Braamfontein%2C%20Johannesburg%2C%202017!5e0!3m2!1sen!2sza!4v1786616926209!5m2!1sen!2sza" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                <p> 50 Rissik Street, Polokwane </p>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.7179858444833!2d29.461878875227406!3d-23.899616978568925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d82d522eb245%3A0xe58889505b6b51f4!2s50%20Rissik%20St%2C%20Polokwane%20Central%2C%20Polokwane%2C%200700!5e0!3m2!1sen!2sza!4v1786617012832!5m2!1sen!2sza" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                <p>Mon–Sat 7:00 – 17:00 · Sun 8:00 – 13:00</p>
-                <p>Phone: 071 555 1324</p>
-                <p>Email: hello@bakedbysihle.co.za</p>
-            </address>
-          
+                <!-- Right Column: Address & Map -->
+                <div class="contact-info-area">
+                    <h3>Visit us</h3>
+                    <address>
+                        <p><strong>Johannesburg (In construction)</strong><br>17 Wolmarans Street, Braamfontein</p>
+                        <p><strong>Polokwane</strong><br>50 Rissik Street</p>
+                        <p>Mon–Sat 7:00 – 17:00 · Sun 8:00 – 13:00</p>
+                        <p>Phone: 071 555 1324</p>
+                        <p>Email: hello@bakedbysihle.co.za</p>
+                    </address>
+                    
+                    <!-- Part 3: Interactive Map -->
+                    <div id="map"></div>
+                </div>
+
+            </div>
         </section>
     </main>
 
-    <!-- ===== FOOTER ===== -->
     <footer>
         <hr />
         <p>Baked By Sihle · Artisan bakery · est. 2023</p>
         <p>
-            <a href="#">Instagram</a> |
-            <a href="#">Facebook</a> |
-            <a href="#">TikTok</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> |
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a> |
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
         </p>
-       
-        <p>&copy; 2026 Baked By Sihle · lovingly baked in Woodstock</p>
+        <p>&copy; 2026 Baked By Sihle · Lovingly Baked in Woodstock</p>
     </footer>
 
+    <!-- Leaflet Map JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

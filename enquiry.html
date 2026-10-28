@@ -3,89 +3,84 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Enquire about custom cakes for your next celebration. Tell us your event date, flavour preferences, and design ideas.">
+    <meta name="keywords" content="custom cake enquiry, wedding cake order, birthday cake bakery">
     <title>Baked By Sihle | Enquiry</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!--NAVIGATION-->
+
     <header>
         <h1>Baked By Sihle</h1>
         <nav>
-            <a href="index.html" target="_blank">Home</a> &nbsp;|&nbsp;
-            <a href="about.html" target="_blank">About</a> &nbsp;|&nbsp;
-            <a href="products.html" target="_blank">Products</a> &nbsp;|&nbsp;
-            <a href="enquiry.html" target="_blank">Enquiry</a> &nbsp;|&nbsp;
-            <a href="contact.html" target="_blank">Contact</a>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a> |
+            <a href="products.html">Products</a> |
+            <a href="enquiry.html">Enquiry</a> |
+            <a href="contact.html">Contact</a>
         </nav>
         <hr />
-        <hr />
     </header>
+
     <main>
         <section>
             <h2>Custom Cake Enquiry</h2>
             <p>Tell us about your celebration - we'll create something beautiful.</p>
             <hr />
 
-            <form>
+            <!-- ID added for JS form validation -->
+            <form id="enquiryForm">
                 <p>
                     <label for="name">Your name *</label><br />
-                    <input type="text" id="name" required />
+                    <input type="text" id="name" />
                 </p>
                 <p>
                     <label for="email">Email *</label><br />
-                    <input type="email" id="email" required />
+                    <input type="email" id="email" />
                 </p>
                 <p>
-                    <label for="phone">Phone</label><br />
+                    <label for="phone">Phone *</label><br />
                     <input type="tel" id="phone" />
                 </p>
                 <p>
                     <label for="eventdate">Event date *</label><br />
-                    <input type="date" id="eventdate" required />
+                    <input type="date" id="eventdate" />
                 </p>
                 <p>
                     <label for="caketype">Cake type</label><br />
                     <select id="caketype">
-                        <option>Birthday</option>
-                        <option>Wedding</option>
-                        <option>Corporate</option>
-                        <option>Other</option>
+                        <option value="Birthday">Birthday</option>
+                        <option value="Wedding">Wedding</option>
+                        <option value="Corporate">Corporate</option>
+                        <option value="Other">Other</option>
                     </select>
                 </p>
                 <p>
-                    <label for="flavour">Flavour preferences</label><br />
-                    <textarea id="flavour" rows="3" cols="40" placeholder="e.g. vanilla, chocolate, red velvet, dairy-free..."></textarea>
-                </p>
-                <p>
                     <label for="details">Additional details</label><br />
-                    <textarea id="details" rows="4" cols="40" placeholder="Design ideas, dietary needs, serving size..."></textarea>
+                    <textarea id="details" rows="4" placeholder="Design ideas, dietary needs, serving size..."></textarea>
                 </p>
                 <p>
-                    <button type="submit">Send enquiry</button>
+                    <button type="submit" class="btn">Send enquiry</button>
                 </p>
             </form>
 
-            <h3>Let's create together</h3>
-            <ul>
-                <li>48h notice required for custom cakes.</li>
-                <li>Phone: 021 555 1234</li>
-                <li>Email: cakes@bakedbysihle.co.za</li>
-                <li>Instagram: @bakedbysihle</li>
-            </ul>
+            <!-- Message shows here after form submits -->
+            <div id="enquiry-response" class="success-msg" style="display:none;"></div>
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <hr />
         <p>Baked By Sihle · Artisan bakery · est. 2023</p>
         <p>
-            <a href="#">Instagram</a> |
-            <a href="#">Facebook</a> |
-            <a href="#">TikTok</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> |
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a> |
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
         </p>
-        
-        <p>&copy; 2026 Baked By Sihle · lovingly baked in Woodstock</p>
+        <p>&copy; 2026 Baked By Sihle · Lovingly Baked in Woodstock</p>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
